@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+
+# Database and large data files
+dog_finder_demo_v4.db
+dog_features.faiss
+Stanford_images/
+Dog_Mx_Dataset/
+NEW_IMAGES_DIR_RF4/
+test_images_limitations/
+duplicate_test_subset/
+nonDogs/
+
+# Token files or sensitive info
+*.token
+*.key

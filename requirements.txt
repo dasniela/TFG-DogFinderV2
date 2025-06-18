@@ -1,0 +1,7 @@
+# Dependencias principales para TFG-DogFinderV2
+numpy
+pandas
+scikit-learn
+faiss-cpu
+opencv-python
+matplotlib

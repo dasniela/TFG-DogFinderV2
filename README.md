@@ -1,9 +1,6 @@
 # TFG DogFinder V2
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dasniela/TFG-DogFinderV2/blob/main/TFG_DogFinder_FeatureExtraction%20.ipynb)
-
-
-Repositorio del Trabajo de Fin de Grado: Búsqueda de similitud de imágenes de perros mediante extracción de características con MobileNetV2
+Repositorio del Trabajo de Fin de Grado: Identificación de imágenes de perros mediante extracción de características con MobileNetV2
 
 ## Objetivo
 Sistema de reconocimiento de imágenes y búsqueda de similitud diseñado para identificar y categorizar perros basándose en sus características visuales. Utiliza un modelo de aprendizaje profundo pre-entrenado (MobileNetV2) para extraer características de las imágenes y la librería FAISS para realizar búsquedas eficientes de similitud en una base de datos de perros registrados.
@@ -45,6 +42,6 @@ Sistema de reconocimiento de imágenes y búsqueda de similitud diseñado para i
 - Para pruebas rápidas, usa el dataset reducido (`TEST_IMAGE_DIRS`).
 
 ## Créditos
-Autor: Daniela Díaz. | TFG 2025
+Autor: Daniela Díaz. | TFG INGENIERÍA INFORMÁTICA - UNIR 2025
 
 ---

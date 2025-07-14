@@ -306,7 +306,7 @@ def show_image(image_path, title=None):
         return
 
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    plt.figure(figsize=(8, 6 ))
+    plt.figure(figsize=(6, 5 ))
     plt.imshow(img)
     if title:
         plt.title(title)

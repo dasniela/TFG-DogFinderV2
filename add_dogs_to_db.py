@@ -102,7 +102,7 @@ def add_images_to_database(image_dirs):
                                 else:
                                     similar_item_info = f"con un elemento FAISS de índice: {faiss_idx} (fuente de mapeo desconocida)"
 
-                                print(f"[OMITIENDO] '{os.path.basename(image_path)}' es un duplicado por características (similitud: {distances[0][0]:.2f}) {similar_item_info}. ")
+                                #print(f"[OMITIENDO] '{os.path.basename(image_path)}' es un duplicado por características (similitud: {distances[0][0]:.2f}) {similar_item_info}. ")
                                 count_exist_features += 1
                                 is_duplicate_in_current_context = True
                         
@@ -115,7 +115,7 @@ def add_images_to_database(image_dirs):
                         found_date = datetime.now() # La fecha de hallazgo es la fecha actual
                         features_json = json.dumps(features.tolist())
                         
-                        print(f"[OK] Añadiendo: {image_path}")
+                        #print(f"[OK] Añadiendo: {image_path}")
 
                         dog = Dog(
                             name=name,

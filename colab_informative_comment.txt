@@ -1,0 +1,13 @@
+# =============================================
+# INFORMACIÓN IMPORTANTE PARA EL USUARIO
+# Esta celda:
+# - Borra el repositorio local si ya existe (para evitar conflictos al clonar).
+# - Clona el repositorio desde GitHub.
+# - Cambia al directorio del repositorio.
+# - Muestra el directorio actual y su contenido.
+# - Monta tu Google Drive para guardar los datos.
+# - Descarga automáticamente el archivo DogFinderData.zip desde Google Drive (autora).
+# - Descomprime el archivo en tu Google Drive para que el notebook funcione sin subir manualmente las carpetas.
+#
+# Si ya tienes las carpetas de datos en tu Drive, puedes comentar las líneas de descarga y descompresión para evitar duplicados.
+# =============================================

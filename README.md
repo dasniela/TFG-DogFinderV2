@@ -36,6 +36,98 @@ Sistema de reconocimiento de imágenes y búsqueda de similitud diseñado para i
 3. Ejecuta `add_dogs_to_db.py` para poblar la base de datos y el índice FAISS.
 4. Consulta los scripts y notebooks para búsqueda y pruebas.
 
+## Ejecución rápida y sencilla en Google Colab 🚀
+
+Este proyecto está preparado para que cualquier usuario pueda ejecutarlo fácilmente en Google Colab, sin necesidad de conocimientos avanzados sobre rutas ni gestión manual de archivos.
+
+### ¿Cómo funciona?
+
+1. **Abre el notebook desde el badge "Abrir en Colab" del README.**
+2. **Ejecuta la primera celda del notebook, que automáticamente:**
+   - Monta tu Google Drive.
+   - Descarga y descomprime los datos solo si no existen.
+   - Verifica que las carpetas de datos estén disponibles.
+3. **¡Listo!** Ya puedes ejecutar el resto del notebook sin preocuparte por subir manualmente las carpetas de imágenes ni configurar rutas.
+
+### Ejemplo de celda inicial automatizada
+
+```python
+# =============================================
+# INSTRUCCIONES AUTOMÁTICAS PARA EL USUARIO
+# Esta celda:
+# - Monta Google Drive
+# - Descarga y descomprime los datos si no existen
+# - Verifica que las carpetas estén disponibles
+# =============================================
+
+from google.colab import drive
+import os
+
+# Montar Google Drive
+drive.mount('/content/drive')
+
+# Ruta donde deben estar los datos
+DATA_ROOT = '/content/drive/MyDrive/Dog_Mx_Dataset'
+
+# Si no existen los datos, descarga y descomprime automáticamente
+if not os.path.exists(DATA_ROOT):
+    print("No se encontraron los datos. Descargando y descomprimiendo...")
+    !pip install -q gdown
+    !gdown --id 11azv5Jxpnz5AjXQjCIeRFaIkHTJxiNRu -O /content/DogFinderData.zip
+    !unzip /content/DogFinderData.zip -d /content/drive/MyDrive/
+else:
+    print("¡Datos encontrados! No es necesario descargar ni descomprimir.")
+
+# Verifica que la carpeta principal existe
+if os.path.exists(DATA_ROOT):
+    print("✅ Carpeta de datos disponible:", DATA_ROOT)
+    print("Ejemplo de contenido:", os.listdir(DATA_ROOT)[:5])
+else:
+    print("❌ ERROR: No se encontró la carpeta de datos. Por favor, revisa las instrucciones.")
+```
+
+### Explicación de rutas
+- **Google Colab accede a tu Google Drive en la ruta `/content/drive/MyDrive/`**.
+- Por ejemplo, si tienes una carpeta llamada `Dog_Mx_Dataset` en tu Drive, la ruta completa será `/content/drive/MyDrive/Dog_Mx_Dataset/`.
+- Si cambias el nombre o la ubicación de la carpeta raíz, actualiza la variable `DATA_ROOT` en la celda anterior.
+
+### Consejos y advertencias
+- El archivo de datos es grande. Asegúrate de tener suficiente espacio en tu Google Drive.
+- Si ya tienes las carpetas de datos en tu Drive, la celda lo detectará y no descargará nada extra.
+- Si tienes problemas de espacio o red, revisa tu Drive y vuelve a intentar la descarga.
+- Si tienes dudas, revisa los mensajes que aparecen al ejecutar la celda: te indicarán si todo está correcto o si falta algún dato.
+
+## Organización recomendada de datos en Google Drive
+
+Para ejecutar el notebook en Google Colab, sube tus carpetas de imágenes a tu Google Drive siguiendo esta estructura:
+
+```
+/MyDrive/DogFinderData/
+├── Dog_Mx_Dataset/
+│   ├── perro1.jpg
+│   └── ...
+├── Stanford_images/
+│   ├── stanford1.jpg
+│   └── ...
+├── NEW_IMAGES_DIR_RF4/
+│   └── ...
+├── test_images_limitations/
+│   └── ...
+├── duplicate_test_subset/
+│   └── ...
+├── nonDogs/
+│   └── ...
+```
+
+En el notebook, accede a las imágenes usando rutas como:
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Ejemplo de ruta a imágenes
+path = '/content/drive/MyDrive/DogFinderData/Dog_Mx_Dataset/'
+```
+
 ## Notas
 - El modelo MobileNetV2 se usa como caja negra (no se modifica su código interno).
 - El proyecto prioriza la integración eficiente y la optimización de recursos.
